@@ -47,6 +47,13 @@ local config = {
       spell = false, -- sets vim.opt.spell
       signcolumn = "auto", -- sets vim.opt.signcolumn to auto
       wrap = false, -- sets vim.opt.wrap
+      colorcolumn = { 100 }, -- Add visible column barrier
+      foldenable = true, -- Enable code folding
+      foldlevel = 99, -- Ensure all folds are open
+      ruler = true, -- Show line and column number of the cursor on right side of statusline
+      timeoutlen = 400, -- Length of time to wait for a mapped sequence
+      visualbell = true, -- Blink cursor on error instead of beeping
+      ttyfast = true, -- Fast scrolling
     },
     g = {
       mapleader = " ", -- sets vim.g.mapleader
@@ -72,18 +79,19 @@ local config = {
 
   -- Set dashboard header
   header = {
-    " █████  ███████ ████████ ██████   ██████",
-    "██   ██ ██         ██    ██   ██ ██    ██",
-    "███████ ███████    ██    ██████  ██    ██",
-    "██   ██      ██    ██    ██   ██ ██    ██",
-    "██   ██ ███████    ██    ██   ██  ██████",
-    " ",
-    "    ███    ██ ██    ██ ██ ███    ███",
-    "    ████   ██ ██    ██ ██ ████  ████",
-    "    ██ ██  ██ ██    ██ ██ ██ ████ ██",
-    "    ██  ██ ██  ██  ██  ██ ██  ██  ██",
-    "    ██   ████   ████   ██ ██      ██",
+    "██      ███████ ████████ ███████ ",
+    "██      ██         ██    ██      ",
+    "██      █████      ██    ███████ ",
+    "██      ██         ██         ██ ",
+    "███████ ███████    ██    ███████ ",
+    "                                 ",
+    "     ██████   ██████  ██         ",
+    "    ██       ██    ██ ██         ",
+    "    ██   ███ ██    ██ ██         ",
+    "    ██    ██ ██    ██            ",
+    "     ██████   ██████  ██         ",
   },
+
 
   -- Default theme configuration
   default_theme = {
@@ -164,6 +172,7 @@ local config = {
     mappings = {
       n = {
         -- ["<leader>lf"] = false -- disable formatting keymap
+        ["<leader>rn"] = { "<cmd>lua vim.lsp.buf.rename()<CR>", desc = "Search/Replace in Workspace" },
       },
     },
     -- add to the global LSP on_attach function
@@ -200,6 +209,17 @@ local config = {
   mappings = {
     -- first key is the mode
     n = {
+      -- NORMAL
+      -- Move text up and down
+      ["<A-j>"] = { "<Esc>:m .+1<CR>==gi", desc = "Move single line up" },
+      ["<A-k>"] = { "<Esc>:m .-2<CR>==gi", desc = "Move single line down" },
+
+      -- Select all in current file
+      ["<leader>a"] = { "ggVG", desc = "Select all text in file" },
+
+      -- Enter blank line without leaving NORMAL mode
+      ["<CR>"] = { "o<Esc>", desc = "Return down in normal mode" },
+
       -- second key is the lefthand side of the map
       -- mappings seen under group name "Buffer"
       ["<leader>bb"] = { "<cmd>tabnew<cr>", desc = "New tab" },
@@ -208,42 +228,112 @@ local config = {
       ["<leader>bt"] = { "<cmd>BufferLineSortByTabs<cr>", desc = "Sort by tabs" },
       -- quick save
       -- ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
+
+      -- Diffview for Git
+      ["<leader>do"] = { "<cmd>DiffviewOpen<CR>", desc = "Git DiffView open" },
+      ["<leader>dc"] = { "<cmd>DiffviewClose<CR>", desc = "Git DiffView close" },
+
+      -- Cheat.sh
+      ["<leader>ch"] = { "<cmd>Cheat<CR>", desc = "Open Cheat.sh input" },
+
+      -- hop.nvim
+      ["s"] = { "<cmd>HopChar1<CR>", desc = "Hop to specific character" },
+
+      -- Spectre - Search and Replace
+      ["<leader>rg"] = { "<cmd>lua require('spectre').open()<CR>", desc = "Search/Replace in Workspace" },
+      ["<leader>rf"] = { "<cmd>lua require('spectre').open_file_search()<CR>", desc = "Search/Replace in File" },
+
+      -- Rename
+      -- ["<leader>rn"] = { "<cmd>lua vim.lsp.buf.renmame()<CR>", desc = "Search/Replace in Workspace" },
+    },
+    v = {
+      -- VISUAL
+    },
+    x = {
+      -- VISUAL BLOCK
+      ["<A-j>"] = { ":move '>+1<CR>gv-gv", desc = "Move lines down" },
+      ["<A-k>"] = { ":move '<-2<CR>gv-gv", desc = "Move lines up" },
     },
     t = {
-      -- setting a mapping to false will disable it
-      -- ["<esc>"] = false,
+      -- TERMINAL
+    },
+    c = {
+      -- COMMAND
     },
   },
 
   -- Configure plugins
   plugins = {
     init = {
-      -- You can disable default plugins as follows:
-      -- ["goolord/alpha-nvim"] = { disable = true },
+      -- -- Colorscheme: Blueish color scheme
+      -- ["cocopon/iceberg.vim"] = {},
+      --
+      -- -- Colorscheme: Blueish color scheme
+      -- ["EdenEast/nightfox.nvim"] = {},
 
-      -- You can also add new plugins here as well:
-      -- Add plugins, the packer syntax without the "use"
-      -- { "andweeb/presence.nvim" },
-      -- {
-      --   "ray-x/lsp_signature.nvim",
-      --   event = "BufRead",
-      --   config = function()
-      --     require("lsp_signature").setup()
-      --   end,
+      -- -- Move to specific position on screen fast
+      -- ["phaazon/hop.nvim"] = {
+      --   branch = "v2",
+      --   config = function() require("hop").setup { keys = "etovxqpdygfblzhckisuran" } end,
       -- },
 
-      -- We also support a key value style plugin definition similar to NvChad:
-      -- ["ray-x/lsp_signature.nvim"] = {
-      --   event = "BufRead",
-      --   config = function()
-      --     require("lsp_signature").setup()
-      --   end,
-      -- },
+      -- Distraction free writing (Zen Mode)
+      ["folke/zen-mode.nvim"] = {
+        config = function() require("zen-mode").setup {} end,
+      },
+
+      -- Git Diff viewer
+      ["sindrets/diffview.nvim"] = {
+        requires = {"nvim-lua/plenary.nvim"},
+        after = "plenary.nvim",
+      },
+
+      -- Cheat.sh Code Snippets and Answers (Open with :Cheat)
+      ["RishabhRD/popfix"] = {},
+      ["RishabhRD/nvim-cheat.sh"] = {},
+
+      -- Keyboard shortcuts for common VIM operations
+      ["tpope/vim-unimpaired"] = {},
+
+      -- Easy and smart search and replace
+      ["brooth/far.vim"] = {},
+
+      -- Smart code folding
+      ["pseewald/vim-anyfold"] = {},
+
+      -- Smart code folding
+      ["windwp/nvim-spectre"] = {},
+
+      -- Wild menu for commands and searches
+      ["gelguy/wilder.nvim"] = {
+        run = "UpdateRemotePlugins",
+        config = function()
+          local wilder = require "wilder"
+          wilder.setup {
+            modes = {":"},
+          }
+          wilder.set_option('renderer', wilder.wildmenu_renderer({
+            highlighter = wilder.basic_highlighter(),
+          }))
+          wilder.set_option('renderer', wilder.popupmenu_renderer({
+            pumblend = 20,
+          }))
+          wilder.set_option('renderer', wilder.popupmenu_renderer(
+            wilder.popupmenu_border_theme({
+              highlights = {
+                border = 'Normal', -- highlight to use for the border
+              },
+              border = 'rounded',
+            })
+          ))
+        end,
+      },
+
     },
     -- All other entries override the require("<key>").setup({...}) call for default plugins
     ["null-ls"] = function(config) -- overrides `require("null-ls").setup(config)`
       -- config variable is the default configuration table for the setup function call
-      -- local null_ls = require "null-ls"
+      local null_ls = require "null-ls"
 
       -- Check supported formatters and linters
       -- https://github.com/jose-elias-alvarez/null-ls.nvim/tree/main/lua/null-ls/builtins/formatting
@@ -251,26 +341,67 @@ local config = {
       config.sources = {
         -- Set a formatter
         -- null_ls.builtins.formatting.stylua,
-        -- null_ls.builtins.formatting.prettier,
+        null_ls.builtins.formatting.prettier,
       }
+      
+      -- set up null-ls's on_attach function
+      -- NOTE: You can remove this on attach function to disable format on save
+      config.on_attach = function(client)
+        if client.resolved_capabilities.document_formatting then
+          vim.api.nvim_create_autocmd("BufWritePre", {
+            desc = "Auto format before save",
+            pattern = "<buffer>",
+            callback = vim.lsp.buf.formatting_sync,
+          })
+        end
+      end
+
       return config -- return final config table
     end,
     treesitter = { -- overrides `require("treesitter").setup(...)`
-      -- ensure_installed = { "lua" },
+      ensure_installed = { "lua" },
     },
+    
+    telescope = {
+      pickers = {
+        find_files = {
+          find_command = {
+            "rg",
+            "--files",
+            "--hidden",
+            "--iglob",
+            "!.git|!.env|!.venv",
+          },
+        },
+      },
+    },
+
+    ["neo-tree"] = {
+      window = {
+        width = 30,
+      },
+      filesystem = {
+        filtered_items = {
+          hide_dotfiles = false,
+        },
+      },
+    },
+
+    
     -- use mason-lspconfig to configure LSP installations
     ["mason-lspconfig"] = { -- overrides `require("mason-lspconfig").setup(...)`
-      -- ensure_installed = { "sumneko_lua" },
+      ensure_installed = { "sumneko_lua" },
     },
     -- use mason-null-ls to configure Formatters/Linter installation for null-ls sources
     ["mason-null-ls"] = { -- overrides `require("mason-null-ls").setup(...)`
-      -- ensure_installed = { "prettier", "stylua" },
+      ensure_installed = { "prettier" },
     },
     ["mason-nvim-dap"] = { -- overrides `require("mason-nvim-dap").setup(...)`
       -- ensure_installed = { "python" },
     },
   },
 
+  
   -- LuaSnip Options
   luasnip = {
     -- Extend filetypes
@@ -283,6 +414,7 @@ local config = {
       paths = {},
     },
   },
+  
 
   -- CMP Source Priorities
   -- modify here the priorities of default cmp sources
@@ -357,6 +489,42 @@ local config = {
     --     ["~/%.config/foo/.*"] = "fooscript",
     --   },
     -- }
+    
+    vim.api.nvim_create_augroup("buf_check", { clear = true })
+    vim.api.nvim_create_autocmd({ "BufReadPost", "BufNewFile" }, {
+      desc = "Enable code folding",
+      group = "buf_check",
+      pattern = "*",
+      command = "AnyFoldActivate",
+    })
+    vim.api.nvim_create_autocmd({ "TextYankPost" }, {
+      desc = "Highlight yanked/copied text",
+      group = "buf_check",
+      pattern = "*",
+      callback = function() vim.highlight.on_yank { timeout = 500 } end,
+    })
+
+    ---------------------------------------------------------------------------------
+
+    -- Set up custom filetypes
+    vim.filetype.add {
+      -- extension = {
+      --   foo = "fooscript",
+      -- },
+      -- filename = {
+      --   ["Blahfile"] = "yaml",
+      --   ["Yofile"] = "yaml",
+      -- },
+      pattern = {
+        ["credentials"] = "toml",
+        ["*Gearsfile*"] = "yaml",
+        ["*Bogiefile*"] = "yaml",
+        ["*Jenkinsfile*"] = "groovy",
+      },
+    }
+
+    
+    
   end,
 }
 
