@@ -12,7 +12,10 @@ with custom modifications.
 
 2. `node` is installed and up to date: [Instructions here](https://nodejs.org/en/)
 
-3. "Nerd Font" Font for terminal: [Instructions here](https://www.nerdfonts.com/font-downloads)
+3. Install and set programming font ([NerdFont](https://www.nerdfonts.com/))
+     - [Downlaod here](https://www.nerdfonts.com/font-downloads) and install
+     - Don't forget to set terminal font to this new font
+     - Recommend: FiraCode Nerd Font
 
 4. If Ubuntu, `sudo apt install vim-gtk`
 
