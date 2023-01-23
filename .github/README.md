@@ -41,9 +41,8 @@ with custom modifications.
 		- (5) Formatter
 
 4. Within `nvim`, install tree sitter parser for select languages
-	- `:TSInstall python`
-	- `:TSInstall go`
-	- `:TSInstall yaml`
+	- `:TSInstall python go yaml bash`
+	- Install whatever you need
 	- [All Supported Languages](https://github.com/nvim-treesitter/nvim-treesitter#supported-languages)
 
 ## Removing `nvim` Configs
