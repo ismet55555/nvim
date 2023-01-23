@@ -14,6 +14,8 @@ with custom modifications.
 
 3. "Nerd Font" Font for terminal: [Instructions here](https://www.nerdfonts.com/font-downloads)
 
+4. If Ubuntu, `sudo apt install vim-gtk`
+
 
 ## Setup
 
