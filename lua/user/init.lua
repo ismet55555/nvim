@@ -57,7 +57,7 @@ local config = {
     },
     g = {
       mapleader = " ", -- sets vim.g.mapleader
-      autoformat_enabled = true, -- enable or disable auto formatting at start (lsp.formatting.format_on_save must be enabled)
+      autoformat_enabled = false, -- enable or disable auto formatting at start (lsp.formatting.format_on_save must be enabled)
       cmp_enabled = true, -- enable completion at start
       autopairs_enabled = true, -- enable autopairs at start
       diagnostics_enabled = true, -- enable diagnostics at start
@@ -152,7 +152,7 @@ local config = {
     formatting = {
       -- control auto formatting on save
       format_on_save = {
-        enabled = true, -- enable or disable format on save globally
+        enabled = false, -- enable or disable format on save globally
         allow_filetypes = { -- enable format on save for specified filetypes only
           -- "go",
         },
@@ -346,15 +346,15 @@ local config = {
       
       -- set up null-ls's on_attach function
       -- NOTE: You can remove this on attach function to disable format on save
-      config.on_attach = function(client)
-        if client.resolved_capabilities.document_formatting then
-          vim.api.nvim_create_autocmd("BufWritePre", {
-            desc = "Auto format before save",
-            pattern = "<buffer>",
-            callback = vim.lsp.buf.formatting_sync,
-          })
-        end
-      end
+--       config.on_attach = function(client)
+--         if client.resolved_capabilities.document_formatting then
+--           vim.api.nvim_create_autocmd("BufWritePre", {
+--             desc = "Auto format before save",
+--             pattern = "<buffer>",
+--             callback = vim.lsp.buf.formatting_sync,
+--           })
+--         end
+--       end
 
       return config -- return final config table
     end,
