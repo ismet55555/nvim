@@ -8,7 +8,7 @@ with custom modifications.
 
 ## Prerequisits
 
-1. NeoVim (`nvim`) is installed, version greater than 0.70: [Instructions here](https://github.com/neovim/neovim/wiki/Installing-Neovim)
+1. NeoVim (`nvim`) is installed, version greater than 0.80: [Instructions here](https://github.com/neovim/neovim/wiki/Installing-Neovim)
 
 2. `node` is installed and up to date: [Instructions here](https://nodejs.org/en/)
 
