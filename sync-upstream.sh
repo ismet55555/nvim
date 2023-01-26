@@ -12,6 +12,9 @@ echo "Committing any changes ..."
 git add .
 git commit "changes and updates"
 
+echo "Pulling any remote changes ..."
+git pull
+
 echo "Merging upstream changes. Accepting my changes for lua/user/init.lua ..."
 git fetch
 git merge upstream/master
