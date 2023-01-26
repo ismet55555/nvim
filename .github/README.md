@@ -16,6 +16,11 @@ with custom modifications.
      - [Downlaod here](https://www.nerdfonts.com/font-downloads) and install
      - Don't forget to set terminal font to this new font
      - Recommend: FiraCode Nerd Font
+     
+4. Install a clipboard cli tool:
+    - MacOS: `brew install -y pbcopy pbpaste`
+    - Ubuntu/Debian: `sudo apt install -y xclip xsel
+    - Windows: `choco install win32yank`
 
 4. If Ubuntu, `sudo apt install vim-gtk`
 
