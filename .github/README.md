@@ -19,7 +19,7 @@ with custom modifications.
      
 4. Install a clipboard cli tool:
     - MacOS: `brew install -y pbcopy pbpaste`
-    - Ubuntu/Debian: `sudo apt install -y xclip xsel
+    - Ubuntu/Debian: `sudo apt install -y xclip xsel`
     - Windows: `choco install win32yank`
 
 4. If Ubuntu, `sudo apt install vim-gtk`
