@@ -15,6 +15,7 @@ git commit "changes and updates"
 echo "Pulling any remote changes ..."
 git config pull.rebase false
 git pull
+git checkout --their .
 
 echo "Merging upstream changes. Accepting my changes for lua/user/init.lua ..."
 git fetch

@@ -8,7 +8,7 @@ with custom modifications.
 
 ## Prerequisits
 
-1. NeoVim (`nvim`) is installed, version greater than 0.70: [Instructions here](https://github.com/neovim/neovim/wiki/Installing-Neovim)
+1. NeoVim (`nvim`) is installed, version greater than 0.80: [Instructions here](https://github.com/neovim/neovim/wiki/Installing-Neovim)
 
 2. `node` is installed and up to date: [Instructions here](https://nodejs.org/en/)
 
@@ -16,6 +16,11 @@ with custom modifications.
      - [Downlaod here](https://www.nerdfonts.com/font-downloads) and install
      - Don't forget to set terminal font to this new font
      - Recommend: FiraCode Nerd Font
+     
+4. Install a clipboard cli tool:
+    - MacOS: `brew install -y pbcopy pbpaste`
+    - Ubuntu/Debian: `sudo apt install -y xclip xsel`
+    - Windows: `choco install win32yank`
 
 4. If Ubuntu, `sudo apt install vim-gtk`
 
