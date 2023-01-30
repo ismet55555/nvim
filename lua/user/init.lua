@@ -283,6 +283,7 @@ local config = {
       },
 
       -- Git Diff viewer
+      ["nvim-lua/plenary.nvim"] = {},
       ["sindrets/diffview.nvim"] = {
         requires = {"nvim-lua/plenary.nvim"},
         after = "plenary.nvim",
