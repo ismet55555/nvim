@@ -11,10 +11,11 @@ with custom modifications.
 1. NeoVim (`nvim`) is installed, version greater than 0.80: [Instructions here](https://github.com/neovim/neovim/wiki/Installing-Neovim)
 
 2. Ensure following are installed:
+	- `pip` - Should be installed, if not: [Instructions here](https://pip.pypa.io/en/stable/installation/)
 	- `node` / `npm` - [Instructions here](https://nodejs.org/en/)
 	- `cargo` - [Instructions here](https://doc.rust-lang.org/cargo/getting-started/installation.html)
 
-3. Install and set programming font ([NerdFont](https://www.nerdfonts.com/))
+3. Install and setup programming font ([NerdFont](https://www.nerdfonts.com/))
      - [Downlaod here](https://www.nerdfonts.com/font-downloads) and install
      - Don't forget to set terminal font to this new font
      - Recommend: FiraCode Nerd Font
@@ -28,12 +29,10 @@ with custom modifications.
 ## Setup
 
 1. Clone into the right path:
-    - MacOS/Linux:
-		- `git clone https://github.com/ismet55555/nvim.git ~/.config/nvim`
-    - Windows:
-		- `git clone https://github.com/ismet55555/nvim.git ~/AppData/Local/nvim`
+    - MacOS/Linux: `git clone https://github.com/ismet55555/nvim.git ~/.config/nvim`
+    - Windows: `git clone https://github.com/ismet55555/nvim.git ~/AppData/Local/nvim`
 
-2. Open `nvim` by entering `nvim`
+2. Open NeoVim by entering `nvim`
 	- This should initialize `PackerSync`, let it finish
 	- If it does not, enter `:PackerSync`
 
