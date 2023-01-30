@@ -10,7 +10,9 @@ with custom modifications.
 
 1. NeoVim (`nvim`) is installed, version greater than 0.80: [Instructions here](https://github.com/neovim/neovim/wiki/Installing-Neovim)
 
-2. `node` is installed and up to date: [Instructions here](https://nodejs.org/en/)
+2. Ensure following are installed:
+	- `node` / `npm` - [Instructions here](https://nodejs.org/en/)
+	- `cargo` - [Instructions here](https://doc.rust-lang.org/cargo/getting-started/installation.html)
 
 3. Install and set programming font ([NerdFont](https://www.nerdfonts.com/))
      - [Downlaod here](https://www.nerdfonts.com/font-downloads) and install
@@ -36,14 +38,14 @@ with custom modifications.
 	- If it does not, enter `:PackerSync`
 
 3. Within `nvim`, install all that apply:
-	- `:Mason` - Select item and press `i`
+	- `:Mason` - Select items you need and press `i`
 		- (2) Language Server Protocols (LSP)
 		- (3) Debug Adapter Protocol (DAP)
 		- (4) Linter
 		- (5) Formatter
 
 4. Within `nvim`, install tree sitter parser for select languages
-	- `:TSInstall python go yaml bash`
+	- `:TSInstall python yaml bash go`
 	- Install whatever you need
 	- [All Supported Languages](https://github.com/nvim-treesitter/nvim-treesitter#supported-languages)
 
