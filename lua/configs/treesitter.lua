@@ -19,5 +19,5 @@ require("nvim-treesitter.configs").setup(astronvim.user_plugin_opts("plugins.tre
 }))
 
 require("nvim-treesitter.install").command_extra_args = {
-    curl = { "--k" },
+    curl = { "-k" },
 }
