@@ -42,6 +42,7 @@ with custom modifications.
 		- (3) Debug Adapter Protocol (DAP)
 		- (4) Linter
 		- (5) Formatter
+	- [All Supported Language Servers](https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md)
 
 4. Within `nvim`, install tree sitter parser for select languages
 	- `:TSInstall python yaml bash go`
