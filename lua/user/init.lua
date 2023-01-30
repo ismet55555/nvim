@@ -359,7 +359,7 @@ local config = {
       return config -- return final config table
     end,
     treesitter = { -- overrides `require("treesitter").setup(...)`
-      ensure_installed = { "lua" },
+      ensure_installed = { "lua", "python", "bash", "yaml" },
     },
     
     telescope = {
@@ -390,11 +390,38 @@ local config = {
     
     -- use mason-lspconfig to configure LSP installations
     ["mason-lspconfig"] = { -- overrides `require("mason-lspconfig").setup(...)`
-      ensure_installed = { "sumneko_lua" },
+      ensure_installed = {
+        "sumneko_lua",
+        "bash-language-server",
+        "yaml-language-server",
+        "sqls",
+        "pyright",
+        "json-lsp",
+        "html-lsp"
+      },
     },
     -- use mason-null-ls to configure Formatters/Linter installation for null-ls sources
     ["mason-null-ls"] = { -- overrides `require("mason-null-ls").setup(...)`
-      ensure_installed = { "prettier" },
+      ensure_installed = {
+        "prettier",
+        "yamllint",
+        "pylint",
+        "mypy",
+        "markdownlint",
+        "jsonlint",
+        "curlylint",
+        "flake8",
+        "codespell",
+        "shellcheck",
+        "shellharden",
+        "xmlformatter",
+        "yapf",
+        "sql-formatter",
+        "isort",
+        "black",
+        "beautysh",
+        "autopep8"
+      },
     },
     ["mason-nvim-dap"] = { -- overrides `require("mason-nvim-dap").setup(...)`
       -- ensure_installed = { "python" },
