@@ -32,9 +32,8 @@ with custom modifications.
 		- `git clone https://github.com/ismet55555/nvim.git ~/AppData/Local/nvim`
 
 2. Open `nvim` by entering `nvim`
-
-3. Within `nvim`, initalize Packer package manger setup
-	- `:PackerSync`
+	- This should initialize `PackerSync`, let it finish
+	- If it does not, enter `:PackerSync`
 
 3. Within `nvim`, install all that apply:
 	- `:Mason` - Select item and press `i`
