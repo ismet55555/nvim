@@ -524,6 +524,12 @@ local config = {
       pattern = "*",
       command = "AnyFoldActivate",
     })
+    vim.api.nvim_create_autocmd({ "BufReadPost", "BufNewFile" }, {
+      desc = "Treesitter highlight hack",
+      group = "buf_check",
+      pattern = "*",
+      command = "write | edit | TSBufEnable highlight",
+    })
     vim.api.nvim_create_autocmd({ "TextYankPost" }, {
       desc = "Highlight yanked/copied text",
       group = "buf_check",
