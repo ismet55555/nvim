@@ -11,7 +11,7 @@ with custom modifications.
 1. NeoVim (`nvim`) is installed, version greater than 0.80: [Instructions here](https://github.com/neovim/neovim/wiki/Installing-Neovim)
 
 2. Ensure following are installed:
-	- `pip` - Should be installed, if not: [Instructions here](https://pip.pypa.io/en/stable/installation/)
+	- `pip` - You probably have it, if not: [Instructions here](https://pip.pypa.io/en/stable/installation/)
 	- `node` / `npm` - [Instructions here](https://nodejs.org/en/)
 	- `cargo` - [Instructions here](https://doc.rust-lang.org/cargo/getting-started/installation.html)
 
@@ -45,13 +45,11 @@ with custom modifications.
 	- [All Supported Language Servers](https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md)
 
 4. Within `nvim`, install tree sitter parser for select languages
-	- `:TSInstall python yaml bash go`
-	- Install whatever you need
+	- `:TSInstall`
+	- To install more languages: `:TSInstall <LANGUAGE>`
 	- [All Supported Languages](https://github.com/nvim-treesitter/nvim-treesitter#supported-languages)
-
-## Sync with upstream AstroNvim
-
-`./sync-upstream.sh`
+	
+After everything installed and settled down, exit then enter again.
 
 ## Removing `nvim` Configs
 
