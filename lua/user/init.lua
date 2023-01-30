@@ -392,12 +392,12 @@ local config = {
     ["mason-lspconfig"] = { -- overrides `require("mason-lspconfig").setup(...)`
       ensure_installed = {
         "sumneko_lua",
-        "bash-language-server",
-        "yaml-language-server",
+        "bashls",
+        "yamlls",
         "sqls",
         "pyright",
-        "json-lsp",
-        "html-lsp"
+        "jsonls",
+        "html"
       },
     },
     -- use mason-null-ls to configure Formatters/Linter installation for null-ls sources
