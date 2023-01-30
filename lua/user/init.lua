@@ -306,26 +306,26 @@ local config = {
 
       -- Wild menu for commands and searches
       ["gelguy/wilder.nvim"] = {
-        run = "UpdateRemotePlugins",
+--         run = "UpdateRemotePlugins",
         config = function()
           local wilder = require "wilder"
           wilder.setup {
             modes = {":", "/", "?"},
           }
---           wilder.set_option('renderer', wilder.wildmenu_renderer({
---             highlighter = wilder.basic_highlighter(),
---           }))
---           wilder.set_option('renderer', wilder.popupmenu_renderer({
---             pumblend = 20,
---           }))
---           wilder.set_option('renderer', wilder.popupmenu_renderer(
---             wilder.popupmenu_border_theme({
---               highlights = {
---                 border = 'Normal', -- highlight to use for the border
---               },
---               border = 'rounded',
---             })
---           ))
+          wilder.set_option('renderer', wilder.wildmenu_renderer({
+            highlighter = wilder.basic_highlighter(),
+          }))
+          wilder.set_option('renderer', wilder.popupmenu_renderer({
+            pumblend = 20,
+          }))
+          wilder.set_option('renderer', wilder.popupmenu_renderer(
+            wilder.popupmenu_border_theme({
+              highlights = {
+                border = 'Normal', -- highlight to use for the border
+              },
+              border = 'rounded',
+            })
+          ))
         end,
       },
 
