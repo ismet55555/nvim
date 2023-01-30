@@ -18,11 +18,9 @@ with custom modifications.
      - Recommend: FiraCode Nerd Font
      
 4. Install a clipboard cli tool:
-    - MacOS: `brew install -y pbcopy pbpaste`
-    - Ubuntu/Debian: `sudo apt install -y xclip xsel`
+    - MacOS: `pbcopy pbpaste` already pre-installed
+    - Ubuntu/Debian: `sudo apt install -y xclip xsel vim-gtk`
     - Windows: `choco install win32yank`
-
-4. If Ubuntu, `sudo apt install vim-gtk`
 
 
 ## Setup
