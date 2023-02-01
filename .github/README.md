@@ -29,8 +29,8 @@ with custom modifications.
 ## Setup
 
 1. Clone into the right path:
-    - MacOS/Linux: `git clone https://github.com/ismet55555/nvim.git ~/.config/nvim`
-    - Windows: `git clone https://github.com/ismet55555/nvim.git ~/AppData/Local/nvim`
+    - MacOS/Linux: `git clone https://github.com/ismet55555/nvim.git $HOME/.config/nvim`
+    - Windows: `git clone https://github.com/ismet55555/nvim.git $HOME/AppData/Local/nvim`
 
 2. Open NeoVim by entering `nvim`
 	- This should initialize `PackerSync`, let it finish
@@ -53,5 +53,5 @@ After everything installed and settled down, exit then enter again.
 
 ## Removing `nvim` Configs
 
-- MacOS/Linux: `rm -rf ~/.config/nvim && rm -rf ~/.local/share/nvim && rm -rf ~/.cache/nvim`
-- Windows: `Remove-Item -Force -Recurse ~\AppData\Local\nvim; Remove-Item -Force -Recurse ~\AppData\Local\nvim-data`
+- MacOS/Linux: `rm -rf $HOME/.config/nvim && rm -rf $HOME/.local/share/nvim && rm -rf $HOME/.cache/nvim`
+- Windows: `Remove-Item -Force -Recurse $HOME\AppData\Local\nvim; Remove-Item -Force -Recurse $HOME\AppData\Local\nvim-data`
