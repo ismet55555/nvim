@@ -11,9 +11,10 @@ with custom modifications.
 1. NeoVim (`nvim`) is installed, version greater than 0.80: [Instructions here](https://github.com/neovim/neovim/wiki/Installing-Neovim)
 
 2. Ensure following are installed:
-	- `pip` - You probably have it, if not: [Instructions here](https://pip.pypa.io/en/stable/installation/)
+	- `tree-sitter` - [Instructions here](https://dcreager.net/tree-sitter/getting-started/)
+	- `python` / `pip` - You probably have it, if not: [Instructions here](https://pip.pypa.io/en/stable/installation/)
 	- `node` / `npm` - [Instructions here](https://nodejs.org/en/)
-	- `cargo` - [Instructions here](https://doc.rust-lang.org/cargo/getting-started/installation.html)
+	- (Optional) `cargo` - [Instructions here](https://doc.rust-lang.org/cargo/getting-started/installation.html)
 
 3. Install and setup programming font ([NerdFont](https://www.nerdfonts.com/))
      - [Downlaod here](https://www.nerdfonts.com/font-downloads) and install
@@ -21,7 +22,7 @@ with custom modifications.
      - Recommend: FiraCode Nerd Font
      
 4. Install a clipboard cli tool:
-    - MacOS: `pbcopy pbpaste` already pre-installed
+    - MacOS: Already pre-installed
     - Ubuntu/Debian: `sudo apt install -y xclip xsel vim-gtk`
     - Windows: `choco install win32yank`
 
