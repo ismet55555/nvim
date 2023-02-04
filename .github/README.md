@@ -16,8 +16,10 @@ with custom modifications.
 		- `python3 -m pip install --upgrade pip setuptools wheel virtualenv pipenv`
 	- `node` / `npm`
 		- MaxOS: `brew install node npm`
-		- Ubuntu: `sudo apt install nodejs npm`
+		- Ubuntu: `sudo apt install -y nodejs npm`
 		- Windows: `choco install nodejs npm`
+	- `tree-sitter`
+		- `npm install -g tree-sitter-cli`
 	- (Optional) `cargo`
 	- (Optional) `go`
 
