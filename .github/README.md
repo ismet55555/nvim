@@ -11,13 +11,19 @@ with custom modifications.
 1. NeoVim (`nvim`) is installed, version greater than 0.80: [Instructions here](https://github.com/neovim/neovim/wiki/Installing-Neovim)
 
 2. Ensure following are installed:
-	- `tree-sitter` - [Instructions here](https://dcreager.net/tree-sitter/getting-started/)
-	- `python` / `pip` - You probably have it, if not: [Instructions here](https://pip.pypa.io/en/stable/installation/)
-	- `node` / `npm` - [Instructions here](https://nodejs.org/en/)
-	- (Optional) `cargo` - [Instructions here](https://doc.rust-lang.org/cargo/getting-started/installation.html)
+	- `pip` / `pipenv` 
+		- `curl -LO https://bootstrap.pypa.io/get-pip.py && python3 get-pip.py && rm get-pip.py`
+		- `python3 -m pip install --upgrade pip setuptools wheel virtualenv pipenv`
+	- `node` / `npm`
+		- MaxOS: `brew install node npm`
+		- Ubuntu: `sudo apt install nodejs npm`
+		- Windows: `choco install nodejs npm`
+	- (Optional) `cargo`
+	- (Optional) `go`
 
 3. Install and setup programming font ([NerdFont](https://www.nerdfonts.com/))
      - [Downlaod here](https://www.nerdfonts.com/font-downloads) and install
+     - Linux Helper: Copy all .ttf to `.fonts`, run `fc-cache -fv`
      - Don't forget to set terminal font to this new font
      - Recommend: FiraCode Nerd Font
      
