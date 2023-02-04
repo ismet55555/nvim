@@ -406,7 +406,6 @@ local config = {
         "sumneko_lua",
         "bashls",
         "yamlls",
-        "sqls",
         "pyright",
         "jsonls",
         "html"
@@ -425,7 +424,6 @@ local config = {
         "flake8",
         "codespell",
         "shellcheck",
-        "shellharden",
         "xmlformatter",
         "yapf",
         "sql-formatter",
