@@ -27,7 +27,8 @@ local config = {
     },
 
     -- Set colorscheme to use
-    colorscheme = "default_theme",
+    -- colorscheme = "default_theme",
+    colorscheme = "onedark_vivid",
 
     -- Add highlight groups in any theme
     highlights = {
@@ -214,7 +215,6 @@ local config = {
         -- first key is the mode
         i = {
             -- INSERT
-            -- ["<C-J>"] = { ':copilot#Accept()<CR>', desc = "Copilot next suggestion" },
             ["<C-J>"] = { "copilot#Accept(<Tab>)", silent = true, expr = true, script = true, desc = "Coplilot accept suggestion"},
         },
         n = {
@@ -274,11 +274,8 @@ local config = {
     -- Configure plugins
     plugins = {
         init = {
-            -- -- Colorscheme: Blueish color scheme
-            -- ["cocopon/iceberg.vim"] = {},
-            --
-            -- -- Colorscheme: Blueish color scheme
-            -- ["EdenEast/nightfox.nvim"] = {},
+            -- Colorscheme
+            ["olimorris/onedarkpro.nvim"] = {},
 
             -- -- Move to specific position on screen fast
             -- ["phaazon/hop.nvim"] = {
